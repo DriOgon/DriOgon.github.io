@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>什么是Front-Matter</title>
+    <link href="/2024/08/08/%E4%BB%80%E4%B9%88%E6%98%AFFront-Matter/"/>
+    <url>/2024/08/08/%E4%BB%80%E4%B9%88%E6%98%AFFront-Matter/</url>
+    
+    <content type="html"><![CDATA[<p><a href="https://hexo.io/zh-cn/docs/front-matter">Front-Matter 请点我跳转</a></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>掌握Github的使用</title>
     <link href="/2024/08/07/%E6%8E%8C%E6%8F%A1Github%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
     <url>/2024/08/07/%E6%8E%8C%E6%8F%A1Github%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
@@ -17,9 +30,9 @@
   
   
   <entry>
-    <title>Markdown常用语法</title>
-    <link href="/2024/05/06/DriOgon-s-First-Blog/"/>
-    <url>/2024/05/06/DriOgon-s-First-Blog/</url>
+    <title>Markdown基本语法</title>
+    <link href="/2024/05/06/Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/"/>
+    <url>/2024/05/06/Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</url>
     
     <content type="html"><![CDATA[<h1 id="Markdown常用语法"><a href="#Markdown常用语法" class="headerlink" title="Markdown常用语法"></a>Markdown常用语法</h1><span id="more"></span><h2 id="一-标题"><a href="#一-标题" class="headerlink" title="一. 标题"></a>一. 标题</h2><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs clean"># 一级标题<br>## 二级标题<br>### 三级标题<br>#### 四级标题<br>##### 五级标题<br>###### 六级标题<br></code></pre></td></tr></table></figure><h2 id="二-段落格式"><a href="#二-段落格式" class="headerlink" title="二.段落格式"></a>二.段落格式</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><span class="hljs-bullet">*</span> 列表 （可嵌套）<br><span class="hljs-emphasis">*斜体*</span>   <br><span class="hljs-strong">**粗体**</span>  <br><span class="hljs-strong">**<span class="hljs-emphasis">*粗斜体*</span>**</span>  <br>---分割线  <br>~~删除线~~    <br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">u</span>&gt;</span></span>下划线<span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">u</span>&gt;</span></span><br>==高亮==<br></code></pre></td></tr></table></figure><h2 id="三-代码"><a href="#三-代码" class="headerlink" title="三.代码"></a>三.代码</h2><figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs autohotkey">`段落一行的代码`<br><br>```代码块``` <br></code></pre></td></tr></table></figure><h2 id="四-超链接"><a href="#四-超链接" class="headerlink" title="四.超链接"></a>四.超链接</h2><figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs scheme">[<span class="hljs-name">链接名称</span>](<span class="hljs-name">网址</span>)<br></code></pre></td></tr></table></figure><p>示例：<a href="https://www.bilibili.com/">这是一个超链接,点我</a> </p><hr><h2 id="五-图片"><a href="#五-图片" class="headerlink" title="五.图片"></a>五.图片</h2><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs scss">!<span class="hljs-selector-attr">[文本属性]</span>(图片地址)<br></code></pre></td></tr></table></figure><p>示例<br><img src="https://s2.loli.net/2024/05/06/qxPnkmGHwKEClRX.webp" alt="一个小可爱"></p>]]></content>
     
