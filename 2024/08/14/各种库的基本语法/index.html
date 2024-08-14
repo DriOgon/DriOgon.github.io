@@ -1,0 +1,737 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/anya.png">
+  <link rel="icon" href="/img/anya.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="陈言泷">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="各种库的基本语法numpy库具体可见飞桨的numpu库介绍">
+<meta property="og:type" content="article">
+<meta property="og:title" content="各种库的基本语法">
+<meta property="og:url" content="https://driogon.github.io/2024/08/14/%E5%90%84%E7%A7%8D%E5%BA%93%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/index.html">
+<meta property="og:site_name" content="DriOgon">
+<meta property="og:description" content="各种库的基本语法numpy库具体可见飞桨的numpu库介绍">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-08-14T07:39:58.030Z">
+<meta property="article:modified_time" content="2024-08-14T07:42:04.431Z">
+<meta property="article:author" content="陈言泷">
+<meta property="article:tag" content="机器学习">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>各种库的基本语法 - DriOgon</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"driogon.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>DriOgon&#39;s Home</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="各种库的基本语法"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-08-14 15:39" pubdate>
+          2024年8月14日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.6k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          14 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">各种库的基本语法</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="各种库的基本语法"><a href="#各种库的基本语法" class="headerlink" title="各种库的基本语法"></a>各种库的基本语法</h1><h2 id="numpy库"><a href="#numpy库" class="headerlink" title="numpy库"></a>numpy库</h2><p>具体可见<a target="_blank" rel="noopener" href="https://aistudio.baidu.com/projectdetail/7368802">飞桨的numpu库介绍</a></p>
+<span id="more"></span>
+<p>有数组array,和python的序列一样，有切片和索引，但是不一样的是，array所有操作都是在原数组上进行的，即原数组会被改变 </p>
+<ul>
+<li>广播功能<ul>
+<li>一方面可以扩展参数的维度,代替for循环来计算1个样本对从w0到w12的所有参数的梯度</li>
+<li>另一方面可以扩展样本的维度，代替for循环来计算样本0到样本403对参数的梯度</li>
+</ul>
+</li>
+<li>一.创建数组<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs stylus">import numpy as np #起别名np<br><span class="hljs-selector-tag">a</span> = np<span class="hljs-selector-class">.array</span>(<span class="hljs-selector-attr">[1,3,4]</span>)<br><span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(a)</span></span><br><span class="hljs-selector-tag">b</span> = np<span class="hljs-selector-class">.array</span>(<span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>,<span class="hljs-number">10</span>,<span class="hljs-number">3</span>))<br>c = np<span class="hljs-selector-class">.arange</span>(<span class="hljs-number">1</span>,<span class="hljs-number">10</span>,<span class="hljs-number">3</span>) <span class="hljs-selector-id">#arrage</span> 即 <span class="hljs-selector-tag">a</span>(array)+range 与上面的range作用和用法一样 <br><span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(c)</span></span><br><span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(c.dtype)</span></span> <span class="hljs-selector-id">#dtype</span> 即二进制类型 包括int32,int64,float64,bool.......<br><br>#修改已有数组的二进制类型<br>d = c<span class="hljs-selector-class">.astype</span>(<span class="hljs-string">&quot;float64&quot;</span>)<br><span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(d)</span></span><br><span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(d.dtype)</span></span><br><span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">&#x27;*&#x27;</span>*<span class="hljs-number">100</span>)</span></span><br>#创建数组时指定二进制数据类型<br>e = np<span class="hljs-selector-class">.array</span>(<span class="hljs-selector-attr">[0,1,2,4]</span>,dtype=<span class="hljs-string">&quot;float64&quot;</span>)<br><span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(e)</span></span><br>f = np<span class="hljs-selector-class">.array</span>(<span class="hljs-selector-attr">[0,1,2,4]</span>,dtype=<span class="hljs-string">&quot;bool&quot;</span>)<br><span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(f)</span></span><br><br></code></pre></td></tr></table></figure></li>
+<li>二.数组的形状np.shape<figure class="highlight leaf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs leaf"><span class="hljs-punctuation">#</span>一.查看数组形状g.shape<br>g = np.array([0,1,2,3,4,5])<br>print(g.shape) <span class="hljs-punctuation">#</span><span class="hljs-params">(6,)</span> <br>h = np.array([[0,1,2],[3,4,5]])<br>print(h.shape) <span class="hljs-punctuation">#</span><span class="hljs-params">(2, 3)</span><br>print(h.shape[0]) <span class="hljs-punctuation">#</span>2<br>print(h.shape[1]) <span class="hljs-punctuation">#</span>3<br><span class="hljs-punctuation">##</span>笔记<br><span class="hljs-punctuation">##</span> 1.故g.shape的结果有几个数，g数组就有几维。其中若只有一个数字，则该数字也表示数组中元素的个数<br><span class="hljs-punctuation">##</span> 2.若只有一行，即只有一维,h.shape[0]表示总个数<br><span class="hljs-punctuation">##</span> 3.若有两维则h.shape[0]表示行数,h.shape[1]表示列数。也可以有三维...<br>注意：（0 行数，1 列数）axis轴，axis=0就是行数的轴，即竖直方向|.axis=1就是列数的轴，即水平方向——<br>a[:,np.newaxis] 表示使a序列上升一个维度，例如一维升二维<br><br><span class="hljs-punctuation">#</span>二.修改数组形状h.reshape() ，也可以是h.reshape([])<br>h.reshape(6,) <span class="hljs-punctuation">#</span><span class="hljs-keyword">array</span><span class="hljs-params">([0, 1, 2, 3, 4, 5])</span><br>print(h) <span class="hljs-punctuation">#</span>[[0 1 2]<br>         <span class="hljs-punctuation">#</span> [3 4 5]]<br>h = h.reshape(6,)<br>print(h) <span class="hljs-punctuation">#</span>[0 1 2 3 4 5]<br><span class="hljs-punctuation">##</span>笔记<br><span class="hljs-punctuation">##</span> 1.h.reshape()是不改变原数组的形状，只是返回一个改变形状的数组，要赋值h = h.reshape(6,)才能使原数组改变形状。--当然行列乘积要等于总数<br><span class="hljs-punctuation">##</span> 2.所以如果想要一个数组快速的在某一个范围内形成二维数组可以在形成数组时就改变它的形状，具体如下<br><br>i = np.array(range(100,150)).reshape(5,10) <span class="hljs-punctuation">#</span>[100,150) 五行十列<br>print(i)<br>&#x27;&#x27;&#x27;<br>[[100 101 102 103 104 105 106 107 108 109]<br> [110 111 112 113 114 115 116 117 118 119]<br> [120 121 122 123 124 125 126 127 128 129]<br> [130 131 132 133 134 135 136 137 138 139]<br> [140 141 142 143 144 145 146 147 148 149]]<br>&#x27;&#x27;&#x27;<br><br></code></pre></td></tr></table></figure></li>
+<li>三.array索引与切片</li>
+</ul>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">import</span> numpy as np<br><br><span class="hljs-comment">#索引是从0开始的</span><br><span class="hljs-attribute">a</span> = np.arange(<span class="hljs-number">24</span>).reshape(<span class="hljs-number">4</span>,<span class="hljs-number">6</span>)<br><span class="hljs-comment"># 相当于 a = np.array(range(24)).reshape(4,6)</span><br><span class="hljs-attribute">print</span>(a)<br><span class="hljs-comment">#取行</span><br><span class="hljs-attribute">a</span>[<span class="hljs-number">1</span>]<br><br><span class="hljs-comment">#取连续多行，前闭后开</span><br><span class="hljs-attribute">a</span>[<span class="hljs-number">1</span>:<span class="hljs-number">3</span>]<br><span class="hljs-attribute">a</span>[:<span class="hljs-number">3</span>] #表示[<span class="hljs-number">0</span>，<span class="hljs-number">3</span>)<br><span class="hljs-attribute">a</span>[<span class="hljs-number">1</span>:] #表示<span class="hljs-number">1</span>到末尾<br><br><span class="hljs-comment">#取不连续的多汗</span><br><span class="hljs-attribute">a</span>[[<span class="hljs-number">0</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]]<br><br><span class="hljs-comment">#通用的行列取法,a[l,r]逗号左边是行，右边是列。冒号指所有</span><br><br><span class="hljs-comment">#取列 </span><br><span class="hljs-attribute">a</span>[:,<span class="hljs-number">0</span>]<br><br><span class="hljs-comment">#取连续多列</span><br><span class="hljs-attribute">a</span>[:,<span class="hljs-number">0</span>:<span class="hljs-number">3</span>]<br><br><span class="hljs-comment">#取不连续的多列</span><br><span class="hljs-attribute">a</span>[:,[<span class="hljs-number">0</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]]<br><br><span class="hljs-comment">#取某个值 3行4列的交点</span><br><span class="hljs-attribute">a</span>[<span class="hljs-number">3</span>,<span class="hljs-number">4</span>]<br><br><span class="hljs-comment">#取多行多列的交集</span><br><span class="hljs-attribute">a</span>[<span class="hljs-number">1</span>:<span class="hljs-number">3</span>,<span class="hljs-number">2</span>:<span class="hljs-number">4</span>]<br><br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><p>四 随机数 np.random</p>
+<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs dns"><span class="hljs-number">1</span>. 随机创建数组<br>a = np.random.rand(<span class="hljs-number">3</span>, <span class="hljs-number">3</span>)<br>输出如下:得到<span class="hljs-number">3</span>*<span class="hljs-number">3</span>的数组<br>array([[<span class="hljs-number">0.27838268</span>, <span class="hljs-number">0.59910705</span>, <span class="hljs-number">0.97848588</span>],<br>       [<span class="hljs-number">0.0785898</span> , <span class="hljs-number">0.92671863</span>, <span class="hljs-number">0.98556855</span>],<br>       [<span class="hljs-number">0.71094793</span>, <span class="hljs-number">0.56055373</span>, <span class="hljs-number">0.9365632</span> ]])<br>#还有很多，正态分布等等<br><br><span class="hljs-number">2</span>.随机打乱<br><span class="hljs-number">3</span>.随机选取元素<br>a = np.arange(<span class="hljs-number">30</span>)<br>b = np.random.choice(a, size=<span class="hljs-number">5</span>)<br>b # array([<span class="hljs-number">23</span>,  <span class="hljs-number">3</span>, <span class="hljs-number">29</span>, <span class="hljs-number">16</span>, <span class="hljs-number">20</span>]) 从a中随机选<span class="hljs-number">5</span>个数给b<br><br>np.random.randn(x,y) 表示生成x行y列的随机数，生成数在均值为<span class="hljs-number">0</span>的左右浮动<br><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>五保存和导入文件</p>
+<figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs autoit">例如<br><span class="hljs-meta"># 使用np.fromfile从文本文件<span class="hljs-string">&#x27;housing.data&#x27;</span>读入数据</span><br><span class="hljs-meta"># 这里要设置参数sep = <span class="hljs-string">&#x27; &#x27;</span>，表示使用空白字符来分隔数据</span><br><span class="hljs-meta"># 空格或者回车都属于空白字符，读入的数据被转化成1维数组</span><br>d = np.fromfile(<span class="hljs-string">&#x27;./work/housing.data&#x27;</span>, sep = <span class="hljs-string">&#x27; &#x27;</span>)<br>d<br>array([<span class="hljs-number">6.320e-03</span>, <span class="hljs-number">1.800e+01</span>, <span class="hljs-number">2.310e+00</span>, ..., <span class="hljs-number">3.969e+02</span>, <span class="hljs-number">7.880e+00</span>,<br>       <span class="hljs-number">1.190e+01</span>])<br></code></pre></td></tr></table></figure></li>
+<li><p>六.数组的计算</p>
+</li>
+</ul>
+<p>1.数组t1与数字a可以进行加减乘除等运算，即t1中的每个数都与a作运算<br>2.数组t1和t2只要有一个维度相等就可以做运算</p>
+<ul>
+<li>七.数学与统计方法函数</li>
+</ul>
+<figure class="highlight leaf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs leaf">import numpy as np<br><br>h = np.array([[0,1,2],[3,4,5]])<br>print(h)<br>h.mean() <span class="hljs-punctuation">#</span>相加后求平均值 =np.mean(h)<br>h.sum()  <span class="hljs-punctuation">#</span>求和     =np.sum(h)<br>h.max()  <span class="hljs-punctuation">#</span>求最大   =np.max(h)<br>h.min()  <span class="hljs-punctuation">#</span>求最小   =np.min(h)<br><br><span class="hljs-punctuation">#</span>都可以指定轴axis<br>h.mean(axis=0)<br>h.mean(axis=1)<br>h.sum(axis=0) <span class="hljs-punctuation">#</span><span class="hljs-keyword">array</span><span class="hljs-params">([3, 5, 7])</span> 即行数 竖直方向求和<br>h.sum(axis=1) <span class="hljs-punctuation">#</span><span class="hljs-keyword">array</span><span class="hljs-params">([ 3, 12])</span>  即列数 水平方向求和<br>h.max(axis=0) <span class="hljs-punctuation">#</span><span class="hljs-keyword">array</span><span class="hljs-params">([3, 4, 5])</span><br>h.min(axis=0) <span class="hljs-punctuation">#</span><span class="hljs-keyword">array</span><span class="hljs-params">([0, 1, 2])</span> 还有其他方法...<br><br>np.zero(x,y)  <span class="hljs-punctuation">#</span>创建一个x行y列的全零数组 后续可用于存数据<br><br></code></pre></td></tr></table></figure>
+<ul>
+<li>八.线性代数相关函数<figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs gcode"><span class="hljs-attr"># 例如矩阵相乘 32</span>*<span class="hljs-number">23</span> = <span class="hljs-number">33</span><span class="hljs-comment">(三行二列*二行三列 = 三行三列)</span><br>x.dot<span class="hljs-comment">(y)</span> <span class="hljs-attr"># = np.dot(x,y)</span><br><span class="hljs-attr"></span><br></code></pre></td></tr></table></figure></li>
+<li>九.可以用于计算激活函数Sigmoid和ReLU….</li>
+</ul>
+<figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs llvm"># <span class="hljs-keyword">x</span>是<span class="hljs-number">1</span>维数组，数组大小是从<span class="hljs-number">-10</span>. 到<span class="hljs-number">10</span>.的实数，每隔<span class="hljs-number">0.1</span>取一个点<br><span class="hljs-keyword">x</span> <span class="hljs-operator">=</span> np.arange(<span class="hljs-number">-10</span><span class="hljs-punctuation">,</span> <span class="hljs-number">10</span><span class="hljs-punctuation">,</span> <span class="hljs-number">0.1</span>)<br># 计算 Sigmoid函数<br>s <span class="hljs-operator">=</span> <span class="hljs-number">1.0</span> / (<span class="hljs-number">1</span> + np.exp(- <span class="hljs-keyword">x</span>)) # np.exp(<span class="hljs-keyword">x</span>) 用于求ex<br><br># 计算ReLU函数<br>y <span class="hljs-operator">=</span> np.clip(<span class="hljs-keyword">x</span><span class="hljs-punctuation">,</span> a_min <span class="hljs-operator">=</span> <span class="hljs-number">0</span>.<span class="hljs-punctuation">,</span> a_max <span class="hljs-operator">=</span> None) #np.clip(<span class="hljs-keyword">x</span><span class="hljs-punctuation">,</span>a_min<span class="hljs-punctuation">,</span>a_max<span class="hljs-punctuation">,</span>out) 用于限制<span class="hljs-keyword">x</span>的范围在<span class="hljs-keyword">min</span>和<span class="hljs-keyword">max</span>之间，小于<span class="hljs-keyword">min</span>的就赋值为<span class="hljs-keyword">min</span>，大于<span class="hljs-keyword">max</span>的就赋值为<span class="hljs-keyword">max</span><br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>十.也可以对图片进行一些操作 读入图片——图片的每个像素点就是一个元素，可以使矩阵数组化 图片水平垂直翻转和裁剪（需要配合其他库）</li>
+</ul>
+<h2 id="json库"><a href="#json库" class="headerlink" title="json库"></a>json库</h2><p>主要的方法是json.loads(),json.dumps()</p>
+<ul>
+<li>json.loads() 把json字符串格式文件，转换成python类型的数据。 一个解码</li>
+<li>json.dumps() 把python类型的数据转换成json字符串            一个编码<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs haskell"><span class="hljs-keyword">import</span> json<br><br><span class="hljs-class"><span class="hljs-keyword">data</span> = &#x27;&#x27;&#x27;</span><br>[&#123;<br>    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;小明&quot;</span>,<br>    <span class="hljs-string">&quot;height&quot;</span>: <span class="hljs-string">&quot;170&quot;</span>,<br>    <span class="hljs-string">&quot;age&quot;</span>: <span class="hljs-string">&quot;18&quot;</span><br>&#125;, &#123;<br>     <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;小红&quot;</span>,<br>    <span class="hljs-string">&quot;height&quot;</span>: <span class="hljs-string">&quot;165&quot;</span>,<br>    <span class="hljs-string">&quot;age&quot;</span>: <span class="hljs-string">&quot;20&quot;</span><br>&#125;]<br><span class="hljs-string">&#x27;&#x27;</span>&#x27;<br><br><span class="hljs-meta"># 打印data类型</span><br><span class="hljs-title">print</span>(<span class="hljs-class"><span class="hljs-keyword">type</span>(<span class="hljs-title">data</span>))</span><br><span class="hljs-meta"># json类型的数据转化为python类型的数据</span><br><span class="hljs-title">new_data</span> = json.loads(<span class="hljs-class"><span class="hljs-keyword">data</span>)</span><br><span class="hljs-meta"># 获取内容</span><br><span class="hljs-title">name</span> = new_data[<span class="hljs-number">0</span>][&#x27;name&#x27;]<br><span class="hljs-title">new_name</span> = new_data[<span class="hljs-number">0</span>].get(&#x27;name&#x27;)<br><span class="hljs-meta"># 打印转换后data类型</span><br><span class="hljs-title">print</span>(<span class="hljs-class"><span class="hljs-keyword">type</span>(<span class="hljs-title">new_data</span>))</span><br><br><span class="hljs-title">print</span>(name)<br><span class="hljs-title">print</span>(new_name)<br><br></code></pre></td></tr></table></figure></li>
+</ul>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%AE%9E%E9%AA%8C%E5%AE%A4/" class="category-chain-item">实验室</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="print-no-link">#机器学习</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>各种库的基本语法</div>
+      <div>https://driogon.github.io/2024/08/14/各种库的基本语法/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>陈言泷</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2024年8月14日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2024/08/14/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="机器学习笔记">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">机器学习笔记</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/08/14/Linux%E5%9F%BA%E7%A1%80/" title="Linux基本语法">
+                        <span class="hidden-mobile">Linux基本语法</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      var light = 'github-light';
+      var dark = 'github-dark';
+      var schema = document.documentElement.getAttribute('data-user-color-scheme');
+      if (schema === 'dark') {
+        schema = dark;
+      } else {
+        schema = light;
+      }
+      window.UtterancesThemeLight = light;
+      window.UtterancesThemeDark = dark;
+      var s = document.createElement('script');
+      s.setAttribute('src', 'https://utteranc.es/client.js');
+      s.setAttribute('repo', 'DriOgon/DriOgon.github.io');
+      s.setAttribute('issue-term', 'pathname');
+      
+      s.setAttribute('label', 'comment');
+      
+      s.setAttribute('theme', schema);
+      s.setAttribute('crossorigin', 'anonymous');
+      document.getElementById('comments').appendChild(s);
+    })
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
