@@ -19,24 +19,29 @@
   <meta name="author" content="陈言泷">
   <meta name="keywords" content="">
   
-    <meta name="description" content="机器学习笔记 通过模型和算法，训练数据（数据集），使得投喂未知数据样本（测试集）时，可以判断结果（标记label）">
+    <meta name="description" content="一、简介Hexo 是一个基于 Node.js 的静态网站生成器，流行的博客框架。适用于创建个人博客。 特点：  将 Markdown 文件转化为静态 HTML 页面。 生成的站点是纯静态的 HTML 文件，因此可以在任何支持静态内容的服务器上部署，如 GitHub Pages、Netlify、Vercel 等。 source 目录是 Hexo 项目的内容根目录，因此当你引用图片等资源时，路径是相对">
 <meta property="og:type" content="article">
-<meta property="og:title" content="机器学习笔记">
-<meta property="og:url" content="https://driogon.github.io/2024/08/14/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:title" content="Hexo使用文档">
+<meta property="og:url" content="https://driogon.github.io/2024/08/15/Hexo%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/index.html">
 <meta property="og:site_name" content="DriOgon">
-<meta property="og:description" content="机器学习笔记 通过模型和算法，训练数据（数据集），使得投喂未知数据样本（测试集）时，可以判断结果（标记label）">
+<meta property="og:description" content="一、简介Hexo 是一个基于 Node.js 的静态网站生成器，流行的博客框架。适用于创建个人博客。 特点：  将 Markdown 文件转化为静态 HTML 页面。 生成的站点是纯静态的 HTML 文件，因此可以在任何支持静态内容的服务器上部署，如 GitHub Pages、Netlify、Vercel 等。 source 目录是 Hexo 项目的内容根目录，因此当你引用图片等资源时，路径是相对">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://pic3.zhimg.com/v2-2ca2899406f46af41d50f06924bea49e_r.jpg">
-<meta property="article:published_time" content="2024-08-14T07:39:58.032Z">
-<meta property="article:modified_time" content="2024-08-14T07:42:01.677Z">
+<meta property="og:image" content="https://s2.loli.net/2024/08/14/kYPDUoyFg4A9Q2u.png">
+<meta property="og:image" content="https://s2.loli.net/2024/08/14/pg9ATtW4RHyqUV8.png">
+<meta property="og:image" content="https://s2.loli.net/2024/08/14/lzGeMIS8bN9f7DY.png">
+<meta property="og:image" content="https://s2.loli.net/2024/08/14/JBmZ23O9RdLTC8e.png">
+<meta property="og:image" content="https://s2.loli.net/2024/08/14/pJqNaoFH6VOx1nh.png">
+<meta property="og:image" content="https://s2.loli.net/2024/08/14/Niv6UnzkGBc8o3R.png">
+<meta property="article:published_time" content="2024-08-15T04:59:08.612Z">
+<meta property="article:modified_time" content="2024-08-15T05:00:18.867Z">
 <meta property="article:author" content="陈言泷">
-<meta property="article:tag" content="机器学习">
+<meta property="article:tag" content="Hexo">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://pic3.zhimg.com/v2-2ca2899406f46af41d50f06924bea49e_r.jpg">
+<meta name="twitter:image" content="https://s2.loli.net/2024/08/14/kYPDUoyFg4A9Q2u.png">
   
   
   
-  <title>机器学习笔记 - DriOgon</title>
+  <title>Hexo使用文档 - DriOgon</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -214,7 +219,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="机器学习笔记"></span>
+            <span id="subtitle" data-typed-text="Hexo使用文档"></span>
           
         </div>
 
@@ -225,8 +230,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-08-14 15:39" pubdate>
-          2024年8月14日 下午
+        <time datetime="2024-08-15 12:59" pubdate>
+          2024年8月15日 下午
         </time>
       </span>
     
@@ -237,7 +242,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.9k 字
+          849 字
         
       </span>
     
@@ -248,7 +253,7 @@
         
         
         
-          16 分钟
+          8 分钟
         
       </span>
     
@@ -285,124 +290,102 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">机器学习笔记</h1>
+            <h1 id="seo-header">Hexo使用文档</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="机器学习笔记"><a href="#机器学习笔记" class="headerlink" title="机器学习笔记"></a>机器学习笔记</h1><ul>
-<li>通过模型和算法，训练数据（数据集），使得投喂未知数据样本（测试集）时，可以判断结果（标记label）<span id="more"></span></li>
-<li>机器学习的目标是使得学到的模型能很好的适用于“新样本”,<br>而不仅仅是训练集合，我们称模型适用于新样本的能力为<em><strong>泛化</strong></em>(generalization)能力 </li>
-<li>|f(x)-y|&lt;&#x3D;e f(x)是模型结果 y是真实值 所要做的就是努力缩小两者之间的差 </li>
-<li>每个属性作为一个维度，想象成坐标的形式，最终的标签label，就可以指向，即视作一个向量。</li>
-<li>模型假设、评价函数（损失&#x2F;优化目标）和优化算法是构成模型的三个关键要素。</li>
-<li>决策树</li>
-<li>神经网络</li>
-<li>支持向量机SVM和核方法</li>
-<li>深度学习</li>
-</ul>
-<p>预测内容及解决方法:</p>
-<p>对于预测问题，可以根据预测输出的类型是连续的实数值，还是离散的标签，区分为回归任务和分类任务。</p>
+                <h1 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h1><p>Hexo 是一个基于 Node.js 的静态网站生成器，流行的博客框架。适用于创建个人博客。</p>
+<p>特点：</p>
 <ul>
-<li>分类问题(classification) <strong>二分类</strong>0&#x2F;1 多分类，多是离散值但可以用联系函数连续化。常见的联系函数是<img src="https://pic3.zhimg.com/v2-2ca2899406f46af41d50f06924bea49e_r.jpg" srcset="/img/loading.gif" lazyload alt="Sigmoid函数（S形函数）中的最佳代表，即对数几率函数（Logistic Function）"><ul>
-<li>决策树</li>
-<li>贝叶斯</li>
-<li>支持向量机</li>
-<li>逻辑回归</li>
-<li>集成学习</li>
+<li>将 Markdown 文件转化为静态 HTML 页面。</li>
+<li>生成的站点是纯静态的 HTML 文件，因此可以在任何支持静态内容的服务器上部署，如 <code>GitHub Pages</code>、<code>Netlify</code>、<code>Vercel</code> 等。</li>
+<li><code>source</code> 目录是 Hexo 项目的内容根目录，因此当你引用图片等资源时，路径是相对 <code>source</code> 目录的。</li>
 </ul>
-</li>
-<li>回归(regression)<ul>
-<li>线性回归（线性的，非线性的 二次，对数ln..  ），连续值</li>
-<li>岭回归</li>
-<li>Lasso回归</li>
-</ul>
-</li>
-<li>聚类问题<ul>
-<li>K-means</li>
-<li>高斯混合聚类</li>
-<li>密度聚类</li>
-<li>层次聚类</li>
-<li>谱聚类</li>
-</ul>
-</li>
-</ul>
-<h2 id="基本术语"><a href="#基本术语" class="headerlink" title="基本术语"></a>基本术语</h2><ul>
-<li>样本(sample)</li>
-<li>属性(attribute)&#x2F;特征(feature)</li>
-<li>标记&#x2F;标签(label)</li>
-<li>真相(ground truth) 标签y的真实值</li>
-<li>预测(prediction) 根据得到的模型，投入测试集预测出f(x)</li>
-<li>推理(inference) </li>
-<li>数据集(data set) 数据集划分为三个内容</li>
-<li>①训练集(training set) 用于确定模型参数。</li>
-<li>②验证集(validation set) 用于调节模型超参数（如多个网络结构、正则化权重的最优选择）</li>
-<li>③测试集(test set) 将其投入到最终生成的模型中，进行测试（跑分）</li>
-<li>学习器(learner) 算法程序进行特征-&gt;标签的映射</li>
-<li>监督学习(supervised learning) 训练时样本给定正常答案的label，用于训练模型</li>
-<li>无监督学习(unsupervised learning) 样本是没有标定label的，多用于将样本分堆</li>
-<li>半监督学习</li>
-<li>假设函数（Hypothesis Function）假设函数是指，用数学的方法描述自变量和因变量之间的关系，它们之间可以是一个线性函数或非线性函数。 </li>
-<li>损失函数（Loss Function）损失函数是指，用数学的方法衡量假设函数预测结果与真实值之间的误差。这个差距越小预测越准确，而算法的任务就是使这个差距越来越小。———-在回归问题中常用均方误差作为损失函数，而在分类问题中常用采用交叉熵（Cross-Entropy）作为损失函数</li>
-<li>优化算法（Optimization Algorithm）</li>
-</ul>
-<h2 id="归纳偏好"><a href="#归纳偏好" class="headerlink" title="归纳偏好"></a>归纳偏好</h2><ul>
-<li>没有免费的午餐 No Free Lunch </li>
-<li>NFL定理：一个算法a如果在某些问题上比另一个算法b好，必然存在另一些问题，b比a好</li>
-<li>所以要具体问题 具体分析</li>
-</ul>
-<h2 id="模型评估方法"><a href="#模型评估方法" class="headerlink" title="模型评估方法"></a>模型评估方法</h2><ul>
-<li>k折交叉验证法</li>
-<li>留出法</li>
-<li>自助法</li>
-</ul>
-<h2 id="梯度下降法"><a href="#梯度下降法" class="headerlink" title="梯度下降法"></a>梯度下降法</h2><ul>
-<li><em><strong>梯度下降法</strong></em> 确定损失函数，随机一个起始点，使学习率慢慢变小，使得梯度一直下降，直到近似拟合，找到全局最优点</li>
-<li>一.批量梯度下降</li>
-<li>二.随机梯度下降SGD<ul>
-<li>由于参数每次只沿着梯度反方向更新一点点，因此方向并不需要那么精确。一个合理的解决方案是每次从总的数据集中随机抽取(可以先打乱样本np.shuffle,再顺序抽取minibatch)出小部分数据来代表整体，基于这部分数据计算梯度和损失来更新参数。</li>
-<li>随机梯度下降加快了训练过程，但由于每次仅基于少量样本更新参数和计算损失ii，所以损失下降曲线会出现震荡。</li>
-</ul>
-</li>
-<li>三.小批量梯度下降</li>
-</ul>
-<p>核心概念如下</p>
+<p>网站：</p>
 <ul>
-<li>minibatch：每次迭代时抽取出来的一批数据被称为一个minibatch。</li>
-<li>batch size：每个minibatch所包含的样本数目称为batch size。</li>
-<li>Epoch：当程序迭代的时候，按minibatch逐渐抽取出样本，当把整个数据集都遍历到了的时候，则完成了一轮训练，也叫一个Epoch（轮次）。启动训练时，可以将训练的轮数num_epochs和batch_size作为参数传入。</li>
-<li>也就是说 假设有400个样本，minibatch的size为40，需要遍历迭代10次才完成1轮epoch</li>
+<li><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo用户手册</a></li>
+<li><a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/">Hexo-Fluid用户手册</a></li>
+<li><a target="_blank" rel="noopener" href="https://easyhexo.com/">Easy-Hexo</a></li>
 </ul>
-<h2 id="线性模型"><a href="#线性模型" class="headerlink" title="线性模型"></a>线性模型</h2><p>f(x)&#x3D;w1x1+w2x2+..+wdxd+b</p>
-<p>向量形式即f(x)&#x3D;wTx+b 即模型要学习的参数是w,b</p>
-<p>线性回归模型使用均方误差作为（Mean Squared Error，MSE）损失函数（Loss）</p>
+<p>他人网站：<br><a target="_blank" rel="noopener" href="https://www.helloylh.com/">https://www.helloylh.com/</a><br><a target="_blank" rel="noopener" href="https://alphax.top/">https://alphax.top/</a></p>
+<p><a target="_blank" rel="noopener" href="https://roife.github.io/about/">https://roife.github.io/about/</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/">https://www.ruanyifeng.com/</a></p>
+<p><a target="_blank" rel="noopener" href="https://moechun.fun/">https://moechun.fun/</a></p>
+<p>博客教程：<a target="_blank" rel="noopener" href="https://blog.csdn.net/jj6666djdbbd/article/details/129321783">https://blog.csdn.net/jj6666djdbbd/article/details/129321783</a></p>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2><h1 id="二、常用命令"><a href="#二、常用命令" class="headerlink" title="二、常用命令"></a>二、常用命令</h1><h2 id="1-初始化和创建"><a href="#1-初始化和创建" class="headerlink" title="1.初始化和创建"></a>1.初始化和创建</h2><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs csharp">hexo <span class="hljs-keyword">init</span><br>hexo <span class="hljs-keyword">new</span> [layout] &lt;title&gt;<br></code></pre></td></tr></table></figure>
+
+<p>初始化一个新的项目</p>
+<p>创建一篇新文章或页面</p>
+<h2 id="2-清理"><a href="#2-清理" class="headerlink" title="2.清理"></a>2.清理</h2><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">hexo</span> clean <span class="hljs-comment">#即 hexo c</span><br></code></pre></td></tr></table></figure>
+
+<p>会删除缓存数据文件database（<code>db.json</code>）以及已生成的静态文件夹(<code>public</code>)</p>
+<p>一般在更换主题theme时使用。 </p>
+<h2 id="3-生成"><a href="#3-生成" class="headerlink" title="3.生成"></a>3.生成</h2><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">hexo</span> generator <span class="hljs-comment">#即 hexo g</span><br></code></pre></td></tr></table></figure>
+
+<p>生成静态文件夹<code>public</code></p>
+<p>并将<code>source</code>目录下所有开头不是下划线的资源复制到<code>public</code>下。</p>
+<p>细节：由于我使用的是fluid主题，每一个主题下都有自己的<code>source</code>目录，另外，主项目里也有<code>source</code>目录，因此当执行<code>hexo g</code>时，两个<code>source</code>目录的资源都会被复制到<code>public</code>下。</p>
+<h2 id="4-本地服务器"><a href="#4-本地服务器" class="headerlink" title="4.	本地服务器"></a>4.	本地服务器</h2><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs axapta">hexo <span class="hljs-keyword">server</span> <span class="hljs-meta">#即 hexo s</span><br></code></pre></td></tr></table></figure>
+
+<p>在本地启动一个 Web 服务器，以便预览生成的静态网站。</p>
+<p>默认监听在 <code>http://localhost:4000</code> 端口上。</p>
+<p>使用一些插件可以用来实时监控本地的修改内容，但是由于浏览器的缓存效果，实时监控的效果并不佳。</p>
+<h2 id="5-部署"><a href="#5-部署" class="headerlink" title="5.部署"></a>5.部署</h2><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs jboss-cli">hexo <span class="hljs-keyword">deploy</span> <span class="hljs-comment">#即 hexo d</span><br></code></pre></td></tr></table></figure>
+
+<p>把生成的静态文件从 <code>public</code> 目录上传到目标服务器，通常是通过 Git 进行部署。</p>
+<p>只有执行了这个命令，才能在公网的服务器上看见本地修改。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>一般来说，当你修改了本地文件后，如果想要在网站看见修改内容，需要</p>
 <ul>
-<li>线性回归的本质就是一个采用线性激活函数的全连接层（fully-connected layer） </li>
-<li>最小二乘法  多元线性回归。用到求导&#x3D;0取极值的方法。但是这种方法只对线性回归这样简单的任务有效。如果模型中含有非线性变换，或者损失函数不是均方差这种简单的形式，则很难通过上式求解 就要用到普适的梯度下降法</li>
-<li>对率回归 用回归的模型做二分类 可用极大似然法求解</li>
-<li>线性判别分析 LDA （二分类）将二维的样例投影到一条直线上，实现降维。使同类样例的投影点尽可能接近，使异类样例的投影点尽可能远离</li>
-<li>类别不平衡</li>
+<li>先执行<code>hexo g</code>生成本地静态文件</li>
+<li>再执行<code>hexo d</code>部署到公网服务器上</li>
 </ul>
-<h2 id="决策树模型"><a href="#决策树模型" class="headerlink" title="决策树模型"></a>决策树模型</h2><p>决策树学习的关键在于如何选择最优划分属性，我们希望决策树的分支结点所包含的样本尽可能属于同一类别，即结点的“纯度”(purity)越来越高。有三种基本的划分选择</p>
-<h3 id="划分选择"><a href="#划分选择" class="headerlink" title="划分选择"></a>划分选择</h3><ul>
-<li>一信息增益 用到信息熵的概念 对每个属性求信息增益（差值），某属性a的信息增益越大，则意味着使用属性a来进行划分所获得的“纯度提升”越大，因此用属性a来分支的优先级更大</li>
-<li>二增益率 用信息增益&#x2F;分支数，将两者结合，所想要的是信息增益高的同时，分支数尽量少。但并非绝对，所以使用了一个启发式：先从候选划分属性中找出信息增益高于平均水平的属性，再从中选取增益率最高的。</li>
-<li>三基尼指数</li>
+<h1 id="三、Front-Matter"><a href="#三、Front-Matter" class="headerlink" title="三、Front Matter"></a>三、Front Matter</h1><ul>
+<li>Front-matter 是文件开头的 YAML 或 JSON 代码块，用于配置写作设置。</li>
+<li>YAML格式书写时，Front-matter 以三个破折号结束；（<a href="https://driogon.github.io/2024/08/14/Yaml%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">Yaml语法参考</a>）</li>
+<li>以 JSON 格式书写时，Front-matter 以三个分号结束。</li>
 </ul>
-<h3 id="剪枝"><a href="#剪枝" class="headerlink" title="剪枝"></a>剪枝</h3><p>“剪枝”是决策树学习算法对付“过拟合”的主要手段。</p>
-<p>即可通过“剪枝”来一定程度避免因决策分支过多，以致于把训练集自身的一些特点当做所有数据都具有的一般性质而导致的过拟合</p>
+<p>具体查看<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/front-matter">官方文档</a></p>
+<h1 id="四、分类页"><a href="#四、分类页" class="headerlink" title="四、分类页"></a>四、分类页</h1><p>在文章前头加上<code>categories:</code></p>
 <ul>
-<li>预剪枝 生成决策树的同时剪枝</li>
-<li>后剪枝 生成完整决策树后，再剪枝</li>
+<li><p>单分类</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-meta">---</span><br><span class="hljs-attr">categories:</span><br>    <span class="hljs-bullet">-</span> [<span class="hljs-string">语言语法</span>]<br><span class="hljs-meta">---</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="https://s2.loli.net/2024/08/14/kYPDUoyFg4A9Q2u.png" srcset="/img/loading.gif" lazyload alt="image-20240814114859751"></p>
+</li>
+<li><p>子分类</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-meta">---</span><br><span class="hljs-attr">categories:</span><br>    <span class="hljs-bullet">-</span> [<span class="hljs-string">Linux</span>, <span class="hljs-string">Hexo</span>]<br><span class="hljs-meta">---</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="https://s2.loli.net/2024/08/14/pg9ATtW4RHyqUV8.png" srcset="/img/loading.gif" lazyload alt="image-20240814115059290"></p>
+</li>
+<li><p>并列分类</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-meta">---</span><br><span class="hljs-attr">categories:</span><br>	<span class="hljs-bullet">-</span> [<span class="hljs-string">Linux</span>]<br>	<span class="hljs-bullet">-</span> [<span class="hljs-string">Tools</span>]<br><span class="hljs-meta">---</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="https://s2.loli.net/2024/08/14/lzGeMIS8bN9f7DY.png" srcset="/img/loading.gif" lazyload alt="image-20240814115411702"></p>
+</li>
+<li><p>并列子分类</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-meta">---</span><br><span class="hljs-attr">categories:</span><br>	<span class="hljs-bullet">-</span> [<span class="hljs-string">Linux</span>, <span class="hljs-string">Hexo</span>]<br>	<span class="hljs-bullet">-</span> [<span class="hljs-string">Tools</span>, <span class="hljs-string">PHP</span>]<br><span class="hljs-meta">---</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="https://s2.loli.net/2024/08/14/JBmZ23O9RdLTC8e.png" srcset="/img/loading.gif" lazyload alt="image-20240814115550330"></p>
+</li>
 </ul>
-<p>需要评估剪枝前后决策树的优劣性</p>
-<h3 id="样本缺失值的处理"><a href="#样本缺失值的处理" class="headerlink" title="样本缺失值的处理"></a>样本缺失值的处理</h3><p>思路：样本赋权，权重划分..</p>
-<h2 id="神经网络"><a href="#神经网络" class="headerlink" title="神经网络"></a>神经网络</h2><h2 id="卷积神经网络"><a href="#卷积神经网络" class="headerlink" title="卷积神经网络"></a>卷积神经网络</h2><ul>
-<li>多用于图像识别分类领域</li>
-<li>卷积核</li>
-<li>卷积-（激活函数）-池化- 卷积-池化—–最后全连接神经网络</li>
+<h1 id="五、添加评论功能"><a href="#五、添加评论功能" class="headerlink" title="五、添加评论功能"></a>五、添加评论功能</h1><p>hexo-fluid自带了常用评论插件</p>
+<ul>
+<li><p><strong>文章页</strong>。只需要根据主题配置文件的说明，配置好主题配置文件即可。<img src="https://s2.loli.net/2024/08/14/pJqNaoFH6VOx1nh.png" srcset="/img/loading.gif" lazyload alt="image-20240814111246670"></p>
+</li>
+<li><p><strong>关于页</strong>。不需要配置主题配置文件，只需要在<code>\source\about\index.md</code>文件中的<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/front-matter">Front Matter</a>中加上<code>comment:type</code>键值对即可。</p>
+<p><img src="https://s2.loli.net/2024/08/14/Niv6UnzkGBc8o3R.png" srcset="/img/loading.gif" lazyload alt="image-20240814112100311"></p>
+</li>
 </ul>
-<h2 id="支持向量机"><a href="#支持向量机" class="headerlink" title="支持向量机"></a>支持向量机</h2>
+<h1 id="六、开发网站时发现的小知识"><a href="#六、开发网站时发现的小知识" class="headerlink" title="六、开发网站时发现的小知识"></a>六、开发网站时发现的小知识</h1><h2 id="1-浏览器刷新，F5和Ctrl-F5的区别"><a href="#1-浏览器刷新，F5和Ctrl-F5的区别" class="headerlink" title="1.浏览器刷新，F5和Ctrl+F5的区别"></a>1.浏览器刷新，F5和Ctrl+F5的区别</h2><p><code>F5</code> 请求的是浏览器缓存</p>
+<p>而 <code>Ctrl+F5</code> 是重新请求服务器资源，刷新掉浏览器的旧数据缓存</p>
+<p>因此，在网站资源无法成功刷新时，选择<code>Ctrl+F5</code>进行刷新。</p>
+<p>但是浏览器上的&#x3D;&#x3D;新无痕窗口&#x3D;&#x3D;才是最快反应更新内容的。(没有缓存)</p>
+<h2 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h2><h1 id="To-do-list"><a href="#To-do-list" class="headerlink" title="To do list"></a>To do list</h1><ul>
+<li>添加音乐播放器hexo-tag-aplayer</li>
+<li></li>
+</ul>
+
                 
               </div>
             
@@ -420,7 +403,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E5%AE%9E%E9%AA%8C%E5%AE%A4/" class="category-chain-item">实验室</a>
+  <a href="/categories/Hexo/" class="category-chain-item">Hexo</a>
   
   
 
@@ -435,7 +418,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="print-no-link">#机器学习</a>
+        <a href="/tags/Hexo/" class="print-no-link">#Hexo</a>
       
     </div>
   
@@ -447,8 +430,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>机器学习笔记</div>
-      <div>https://driogon.github.io/2024/08/14/机器学习笔记/</div>
+      <div>Hexo使用文档</div>
+      <div>https://driogon.github.io/2024/08/15/Hexo使用文档/</div>
     </div>
     <div class="license-meta">
       
@@ -460,7 +443,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年8月14日</div>
+          <div>2024年8月15日</div>
         </div>
       
       
@@ -492,18 +475,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/08/15/Hexo%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/" title="Hexo使用文档">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Hexo使用文档</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/08/14/%E5%90%84%E7%A7%8D%E5%BA%93%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" title="各种库的基本语法">
-                        <span class="hidden-mobile">各种库的基本语法</span>
+                      <a href="/2024/08/14/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="机器学习笔记">
+                        <span class="hidden-mobile">机器学习笔记</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
